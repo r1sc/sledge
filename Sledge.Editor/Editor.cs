@@ -691,8 +691,30 @@ namespace Sledge.Editor
 
         private void SelectionBoxChanged(Box box)
         {
-            if (box == null || box.IsEmpty()) StatusBoxLabel.Text = "";
-            else StatusBoxLabel.Text = box.Width.ToString("0") + " x " + box.Length.ToString("0") + " x " + box.Height.ToString("0");
+            if (box == null || box.IsEmpty())
+            {
+                StatusBoxLabel.Text = "";
+                StatusBoxMetric.Text = "";
+            }
+            else
+            {
+                StatusBoxLabel.Text = box.Width.ToString("0") + " x " + box.Length.ToString("0") + " x " + box.Height.ToString("0");
+
+                var sel = DocumentManager.CurrentDocument.Selection.GetSelectedParents().ToList();
+                var useEntityScale = sel.All(x => x is Entity);
+                StatusBoxMetric.Text = HammerUnitsToMeters(box.Width, useEntityScale).ToString("0.0")
+                    + " x "
+                    + HammerUnitsToMeters(box.Length, useEntityScale).ToString("0.0")
+                    + " x "
+                    + HammerUnitsToMeters(box.Height, useEntityScale).ToString("0.0");
+            }
+        }
+
+        private decimal HammerUnitsToMeters(decimal hammerUnits, bool useEntityScale)
+        {
+            var feet = hammerUnits / (useEntityScale ? 12.0m : 16.0m);
+            var meters = feet / 3.2808m;
+            return meters;
         }
 
         private void SelectionChanged()

@@ -38,6 +38,7 @@ namespace Sledge.Editor
             this.StatusTextLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusSelectionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusCoordinatesLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusBoxMetric = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusBoxLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusZoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusSnapLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -75,11 +76,13 @@ namespace Sledge.Editor
             this.StatusTextLabel,
             this.StatusSelectionLabel,
             this.StatusCoordinatesLabel,
+            this.StatusBoxMetric,
             this.StatusBoxLabel,
             this.StatusZoomLabel,
             this.StatusSnapLabel});
             this.stsStatus.Location = new System.Drawing.Point(0, 726);
             this.stsStatus.Name = "stsStatus";
+            this.stsStatus.ShowItemToolTips = true;
             this.stsStatus.Size = new System.Drawing.Size(879, 24);
             this.stsStatus.TabIndex = 1;
             this.stsStatus.Text = "statusStrip1";
@@ -109,6 +112,16 @@ namespace Sledge.Editor
             this.StatusCoordinatesLabel.Name = "StatusCoordinatesLabel";
             this.StatusCoordinatesLabel.Size = new System.Drawing.Size(130, 19);
             // 
+            // StatusBoxMetric
+            // 
+            this.StatusBoxMetric.AutoSize = false;
+            this.StatusBoxMetric.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.StatusBoxMetric.Name = "StatusBoxMetric";
+            this.StatusBoxMetric.Size = new System.Drawing.Size(130, 19);
+            this.StatusBoxMetric.ToolTipText = "Size of selection in metric units";
+            // 
             // StatusBoxLabel
             // 
             this.StatusBoxLabel.AutoSize = false;
@@ -117,6 +130,7 @@ namespace Sledge.Editor
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.StatusBoxLabel.Name = "StatusBoxLabel";
             this.StatusBoxLabel.Size = new System.Drawing.Size(130, 19);
+            this.StatusBoxLabel.ToolTipText = "Size of selection in world units";
             // 
             // StatusZoomLabel
             // 
@@ -633,6 +647,7 @@ namespace Sledge.Editor
         private UI.DockedPanel DockLeft;
         private UI.DockedPanel DockBottom;
         private UI.DockPanels.OutputMessagePanel outputMessagePanel1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusBoxMetric;
     }
 }
 
