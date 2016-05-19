@@ -129,6 +129,12 @@
     <Compile Include="Actions\Visgroups\CreateEditDeleteVisgroups.cs" />
     <Compile Include="Actions\Visgroups\ShowAllVisgroups.cs" />
     <Compile Include="Actions\Visgroups\ToggleVisgroup.cs" />
+    <Compile Include="BackgroundImageSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackgroundImageSettings.Designer.cs">
+      <DependentUpon>BackgroundImageSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Brushes\Controls\FontChooserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +290,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rendering\Viewport3DRenderOptions.cs" />
+    <Compile Include="Rendering\ViewportBackgroundImageListener.cs" />
     <Compile Include="Rendering\ViewportLabelListener.cs" />
     <Compile Include="Rendering\WidgetLinesRenderable.cs" />
     <Compile Include="Scheduler.cs" />
@@ -633,6 +640,9 @@
     <Compile Include="Visgroups\VisgroupPanel.Designer.cs">
       <DependentUpon>VisgroupPanel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BackgroundImageSettings.resx">
+      <DependentUpon>BackgroundImageSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Brushes\Controls\BooleanControl.resx">
       <DependentUpon>BooleanControl.cs</DependentUpon>
     </EmbeddedResource>

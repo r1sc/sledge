@@ -164,6 +164,7 @@ namespace Sledge.Editor.Menu
             Add("Help", new SimpleMenuBuilder("Check for Updates", EditorMediator.CheckForUpdates) { Image = Resources.Menu_Update });
             Add("Help", new MenuSplitter());
             Add("Help", new SimpleMenuBuilder("About...", EditorMediator.About));
+            Add("View", new SimpleMenuBuilder("Background Image...", EditorMediator.SelectBackgroundImage) {ShowInToolStrip = true });
         }
 
         public static void UpdateRecentFilesMenu()

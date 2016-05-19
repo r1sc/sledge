@@ -244,12 +244,12 @@ namespace Sledge.UI
         {
             GL.Scale(new Vector3((float) Zoom, (float) Zoom, 0));
             GL.Translate((float)-Position.X, (float)-Position.Y, 0);
+            Listeners.ForEach(x => x.Render2D());
             base.UpdateBeforeRender();
         }
 
         protected override void UpdateAfterRender()
         {
-            Listeners.ForEach(x => x.Render2D());
             base.UpdateAfterRender();
         }
     }

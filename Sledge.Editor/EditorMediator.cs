@@ -91,5 +91,6 @@ namespace Sledge.Editor
 
         // Single instance
 
+        SelectBackgroundImage
     }
 }
