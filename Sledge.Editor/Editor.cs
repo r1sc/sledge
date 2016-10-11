@@ -712,8 +712,10 @@ namespace Sledge.Editor
 
         private decimal HammerUnitsToMeters(decimal hammerUnits, bool useEntityScale)
         {
-            var feet = hammerUnits / (useEntityScale ? 12.0m : 16.0m);
-            var meters = feet / 3.2808m;
+            //var feet = hammerUnits / (useEntityScale ? 12.0m : 16.0m);
+            //var meters = feet * 0.3048m;
+            //return meters;
+            var meters = 0.01905m*hammerUnits;
             return meters;
         }
 
