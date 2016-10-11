@@ -26,12 +26,12 @@ namespace Sledge.Editor
 
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
-            _backgroundImageListener.ScaleX = trackBar1.Value;
+            _backgroundImageListener.ScaleX = trackBar1.Value / 10.0f;
         }
 
         private void trackBar2_ValueChanged(object sender, EventArgs e)
         {
-            _backgroundImageListener.ScaleY = trackBar1.Value;
+            _backgroundImageListener.ScaleY = trackBar1.Value / 10.0f;
         }
     }
 }

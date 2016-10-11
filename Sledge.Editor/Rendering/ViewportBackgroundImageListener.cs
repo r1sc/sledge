@@ -23,8 +23,8 @@ namespace Sledge.Editor.Rendering
     public class ViewportBackgroundImageListener : IViewportEventListener, IDisposable
     {
         public ViewportBase Viewport { get; set; }
-        public int ScaleX { get; set; }
-        public int ScaleY { get; set; }
+        public float ScaleX { get; set; }
+        public float ScaleY { get; set; }
 
         private GLTexture _texture;
         private bool _showing;
